@@ -3,23 +3,13 @@ name: alpine6-node-base
 
 on:
   push:
-    branches:
-      - 'main'
-  pull_request:
+    branches: [ main ]
 
-env:
-  DOCKER_IMAGE: localhost:5000/name/app
 
 jobs:
   docker:
     runs-on: ubuntu-latest
-    services:
-      registry:
-        image: registry:2
-        ports:
-          - 5000:5000
-        steps:
-    
+    steps:
         - name: Check Out Repo 
           uses: actions/checkout@v2
 
